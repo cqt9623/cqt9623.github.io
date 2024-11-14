@@ -8,6 +8,7 @@ https://templatemo.com/tm-520-highway
 body {
   font-family: 'Kanit', sans-serif;
   background-size: cover;
+  text-decoration: none;
 }
 
 body::-webkit-scrollbar {
@@ -319,6 +320,7 @@ nav {
   width: 350;
   overflow: hidden;
   display: inline-flex;
+  text-decoration: none;
 }
 
 .portfolio-item img {
@@ -326,6 +328,7 @@ nav {
   width: 350px;
   object-fit: cover;
   display: block;
+  text-decoration: none;
 }
 
 
@@ -594,10 +597,12 @@ footer a:hover {
 .grid-portfolio {
   padding: 65px 0px;
   background-color: #232323;
+  text-decoration: none;
 }
 
 .grid-portfolio .portfolio-item {
   margin: 15px 0px;
+  text-decoration: none;
 }
 
 .portfolio-item .hover-effect .hover-content {
@@ -606,6 +611,7 @@ footer a:hover {
     width: 100%;
     bottom: 5px;
     left: 0;
+    text-decoration:none;
 }
 
 
