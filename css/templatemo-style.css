@@ -29,7 +29,7 @@ body, html {
 
 
 .page-heading {
-  background-image: url(../img/heading_bg.jpg);
+  background-image: url(../img/recent_post_3.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -695,7 +695,7 @@ footer a:hover {
   .services .service-item:hover {
     background-color: #313131;
   }
-#video_gird{
+#video_gird {
   width: 10%;
   height: 10%;
 }
