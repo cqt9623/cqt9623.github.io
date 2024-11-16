@@ -57,6 +57,9 @@ body, html {
 
 
 /* Nav Bar */
+.navbg {
+  background-color: #1b1b1b;
+}
 
 nav .logo {
   float: left;
