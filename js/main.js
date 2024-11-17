@@ -1,6 +1,9 @@
 jQuery(document).ready(function ($) {
 
   'use strict';
+  
+ 
+
   $(function () {
     $(".item").slice(0, 6).show(); // select the first ten
     $("#load").click(function (e) { // click event for load more
