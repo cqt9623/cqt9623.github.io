@@ -1,24 +1,6 @@
 jQuery(document).ready(function ($) {
 
   'use strict';
-
-  // Select the "Continue Reading" link and the extra content span
-const continueReadingBtn = document.querySelector('.continue-reading');
-const extraContent = document.querySelector('.extra-content');
-
-// Add an event listener to the "Continue Reading" link
-continueReadingBtn.addEventListener('click', function() {
-    // Toggle the visibility of the extra content
-    if (extraContent.style.display === 'none') {
-        extraContent.style.display = 'block'; // Show content
-        continueReadingBtn.textContent = 'Show Less'; // Change the button text
-    } else {
-        extraContent.style.display = 'none'; // Hide content
-        continueReadingBtn.textContent = 'Continue Reading'; // Reset the button text
-    }
-});
-
-
   $(function () {
     $(".item").slice(0, 6).show(); // select the first ten
     $("#load").click(function (e) { // click event for load more
