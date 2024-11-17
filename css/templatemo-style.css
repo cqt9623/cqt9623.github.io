@@ -54,6 +54,12 @@ body, html {
   font-weight: 200;
 }
 
+.image a {
+  display: none;
+}
+
+
+
 
 
 /* Nav Bar */
@@ -322,7 +328,7 @@ nav {
   max-height: 350;
   width: 350;
   overflow: hidden;
-  display: inline-flex;
+  display: inline-block;
   text-decoration: none;
 }
 
