@@ -8,7 +8,7 @@ jQuery(document).ready(function ($) {
     $(".item").slice(0, 6).show(); // select the first ten
     $("#load").click(function (e) { // click event for load more
       e.preventDefault();
-      $(".item:hidden").slice(0, 6).show(); // select next 10 hidden divs and show them
+      $(".item:hidden").slice(0, 3).show(); // select next 10 hidden divs and show them
       if ($(".item:hidden").length == 0) { // check if any hidden divs still exist
         alert("No more 😘😘 SoRrY 😢😢. wait till next time!!"); // alert if there are none left
       }
