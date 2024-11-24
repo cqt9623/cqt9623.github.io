@@ -5,10 +5,10 @@ jQuery(document).ready(function ($) {
  
 
   $(function () {
-    $(".item").slice(0, 6).show(); // select the first ten
+    $(".item").slice(0, 20).show(); // select the first ten
     $("#load").click(function (e) { // click event for load more
       e.preventDefault();
-      $(".item:hidden").slice(0, 3).show(); // select next 10 hidden divs and show them
+      $(".item:hidden").slice(0, 6).show(); // select next 10 hidden divs and show them
       if ($(".item:hidden").length == 0) { // check if any hidden divs still exist
         alert("No more 😘😘 SoRrY 😢😢. wait till next time!!"); // alert if there are none left
       }
@@ -57,8 +57,8 @@ const filterButtons = document.querySelectorAll("#filter-buttons button");
 const filterableCards = document.querySelectorAll("#filterable-cards .portfolio-item");
 const loadMoreButton = document.querySelector("#load");
 
-let itemsPerPage = 6; // Number of items to show initially
-let itemsToLoad = 3; // Number of items to show on each "Load More" click
+let itemsPerPage = 20; // Number of items to show initially
+let itemsToLoad = 6; // Number of items to show on each "Load More" click
 let currentFilter = "all"; // Track the current filter
 
 // Function to show items based on the filter and pagination
