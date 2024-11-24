@@ -337,9 +337,9 @@ nav {
 .portfolio-item .thumb {
   position:relative;
   max-height: 350;
-  width: 350;
+  max-width: 350;
   overflow: hidden;
-  display: inline-block;
+  display: flex;
   text-decoration: none;
 }
 
