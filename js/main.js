@@ -52,3 +52,63 @@ jQuery(document).ready(function ($) {
 
 });
 
+// Select relevant HTML elements
+const filterButtons = document.querySelectorAll("#filter-buttons button");
+const filterableCards = document.querySelectorAll("#filterable-cards .portfolio-item");
+const loadMoreButton = document.querySelector("#load");
+
+let itemsPerPage = 6; // Number of items to show initially
+let itemsToLoad = 3; // Number of items to show on each "Load More" click
+let currentFilter = "all"; // Track the current filter
+
+// Function to show items based on the filter and pagination
+const showItems = () => {
+    let visibleCount = 0;
+
+    filterableCards.forEach(card => {
+        const matchesFilter =
+            currentFilter === "all" || card.dataset.name.toLowerCase() === currentFilter.toLowerCase();
+
+        if (matchesFilter && visibleCount < itemsPerPage) {
+            card.classList.remove("hide");
+            card.classList.add("show");
+            visibleCount++;
+        } else {
+            card.classList.remove("show");
+            card.classList.add("hide");
+        }
+    });
+
+    // Hide the "Load More" button if no more items can be shown
+    const remainingItems = Array.from(filterableCards).filter(
+        card =>
+            (currentFilter === "all" || card.dataset.name.toLowerCase() === currentFilter.toLowerCase()) &&
+            card.classList.contains("hide")
+    );
+
+    loadMoreButton.style.display = remainingItems.length > 0 ? "block" : "none";
+};
+
+// Function to filter cards when a filter button is clicked
+const filterCards = (e) => {
+    document.querySelector("#filter-buttons .active").classList.remove("active");
+    e.target.classList.add("active");
+
+    currentFilter = e.target.dataset.filter; // Update current filter
+    itemsPerPage = 6; // Reset to initial number of items
+    showItems(); // Show items based on the new filter
+};
+
+// Function to load more items
+const loadMoreItems = () => {
+    itemsPerPage += itemsToLoad; // Increase the number of items to show
+    showItems(); // Show items based on the updated number
+};
+
+// Attach event listeners
+filterButtons.forEach(button => button.addEventListener("click", filterCards));
+loadMoreButton.addEventListener("click", loadMoreItems);
+
+// Initial setup
+showItems();
+

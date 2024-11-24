@@ -71,7 +71,29 @@ body, html {
 }
 
 
+#filter-buttons button {
+  border-radius: 3px;
+  background: #fff;
+  border-color: transparent;
+  align-items: center;
+}
 
+#filter-buttons button:hover {
+  background: #ddd;
+}
+
+#filter-buttons button.active {
+  color: #fff;
+  background: #6c757d;
+}
+
+#filterable-cards .portfolio-item {
+  display: block;
+}
+
+#filterable-cards .portfolio-item.hide {
+  display: none;
+}
 
 /* Nav Bar */
 .navbg {
