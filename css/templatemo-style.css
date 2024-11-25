@@ -70,12 +70,21 @@ body, html {
     scrollbar-width: none;  /* Firefox */
 }
 
+#filter-buttons .col-12 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 #filter-buttons button {
   border-radius: 3px;
   background: #fff;
-  border-color: transparent;
-  align-items: center;
+  border: 1px solid transparent; /* Ensure border visibility for hover effects */
+  margin: 10px;
+  padding: 10px 20px; /* Adjust padding for better button size */
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  
 }
 
 #filter-buttons button:hover {
