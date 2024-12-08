@@ -5,15 +5,16 @@ jQuery(document).ready(function ($) {
  
 
   $(function () {
-    $(".item").slice(0, 25).show(); // select the first ten
-    $("#load").click(function (e) { // click event for load more
+    $(".item").slice(0, 25).show(); // Show the first 25 items
+    $("#load").click(function (e) { // Click event for the "Load More" button
       e.preventDefault();
-      $(".item:hidden").slice(0, 6).show(); // select next 10 hidden divs and show them
-      if ($(".item:hidden").length == 0) { // check if any hidden divs still exist
-        alert("No more 😘😘 SoRrY 😢😢. wait till next time!!"); // alert if there are none left
+      $(".item:hidden").slice(0, 6).show(); // Show the next 6 hidden items
+      if ($(".item:hidden").length == 0) { // Check if there are no hidden items left
+        $("#load").hide(); // Hide the "Load More" button
       }
     });
   });
+  
 
 
 
