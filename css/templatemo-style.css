@@ -104,6 +104,18 @@ body, html {
   display: none;
 }
 
+.intro-game{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 20px;
+  color: #fff;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
 /* Nav Bar */
 .navbg {
   background-color: #1b1b1b;
