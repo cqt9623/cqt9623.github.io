@@ -8,12 +8,13 @@ jQuery(document).ready(function ($) {
     $(".item").slice(0, 25).show(); // Show the first 25 items
     $("#load").click(function (e) { // Click event for the "Load More" button
       e.preventDefault();
-      $(".item:hidden").slice(0, 6).show(); // Show the next 6 hidden items
+      $(".item:hidden").slice(0, 6).fadeIn(500); // Fade in the next 6 hidden items over 500ms
       if ($(".item:hidden").length == 0) { // Check if there are no hidden items left
         $("#load").hide(); // Hide the "Load More" button
       }
     });
   });
+  
   
 
 
