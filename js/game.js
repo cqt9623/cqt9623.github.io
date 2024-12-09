@@ -9,77 +9,102 @@ let currentQuestion = {};
 let acceptingAnswers = false;
 let score = 0;
 let questionCounter = 0;
-let availableQuesions = [];
+let availableQuestions = [];
 
 let questions = [];
 
+// Utility function to decode HTML entities
+const decodeHTML = (html) => {
+    const textArea = document.createElement('textarea');
+    textArea.innerHTML = html;
+    return textArea.value;
+};
+
+// Fetch questions from API
 fetch(
-    'https://opentdb.com/api.php?amount=20&category=22&difficulty=easy&type=multiple'
+    'https://opentdb.com/api.php?amount=20&category=9&difficulty=easy'
 )
-    .then((res) => {
-        return res.json();
-    })
+    .then((res) => res.json())
     .then((loadedQuestions) => {
         questions = loadedQuestions.results.map((loadedQuestion) => {
             const formattedQuestion = {
-                question: loadedQuestion.question,
+                question: decodeHTML(loadedQuestion.question),
+                type: loadedQuestion.type,
             };
 
-            const answerChoices = [...loadedQuestion.incorrect_answers];
-            formattedQuestion.answer = Math.floor(Math.random() * 4) + 1;
-            answerChoices.splice(
-                formattedQuestion.answer - 1,
-                0,
-                loadedQuestion.correct_answer
-            );
+            if (loadedQuestion.type === 'multiple') {
+                const answerChoices = [...loadedQuestion.incorrect_answers].map(decodeHTML);
+                formattedQuestion.answer = Math.floor(Math.random() * 4) + 1;
+                answerChoices.splice(
+                    formattedQuestion.answer - 1,
+                    0,
+                    decodeHTML(loadedQuestion.correct_answer)
+                );
 
-            answerChoices.forEach((choice, index) => {
-                formattedQuestion['choice' + (index + 1)] = choice;
-            });
+                answerChoices.forEach((choice, index) => {
+                    formattedQuestion['choice' + (index + 1)] = choice;
+                });
+            } else if (loadedQuestion.type === 'boolean') {
+                // Handle true/false questions
+                formattedQuestion.answer = loadedQuestion.correct_answer === "True" ? 1 : 2;
+                formattedQuestion.choice1 = "True";
+                formattedQuestion.choice2 = "False";
+            }
 
             return formattedQuestion;
         });
 
         startGame();
     })
-    .catch((err) => {
-        console.error(err);
-    });
+    .catch((err) => console.error(err));
 
-//CONSTANTS
+// Constants
 const CORRECT_BONUS = 10;
 const MAX_QUESTIONS = 20;
 
 startGame = () => {
     questionCounter = 0;
     score = 0;
-    availableQuesions = [...questions];
+    availableQuestions = [...questions];
     getNewQuestion();
     game.classList.remove('hidden');
     loader.classList.add('hidden');
 };
 
 getNewQuestion = () => {
-    if (availableQuesions.length === 0 || questionCounter >= MAX_QUESTIONS) {
+    if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
         localStorage.setItem('mostRecentScore', score);
-        //go to the end page
         return window.location.assign('end.html');
     }
+
     questionCounter++;
     progressText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`;
-    //Update the progress bar
     progressBarFull.style.width = `${(questionCounter / MAX_QUESTIONS) * 100}%`;
 
-    const questionIndex = Math.floor(Math.random() * availableQuesions.length);
-    currentQuestion = availableQuesions[questionIndex];
+    const questionIndex = Math.floor(Math.random() * availableQuestions.length);
+    currentQuestion = availableQuestions[questionIndex];
     question.innerText = currentQuestion.question;
 
-    choices.forEach((choice) => {
-        const number = choice.dataset['number'];
-        choice.innerText = currentQuestion['choice' + number];
-    });
+    if (currentQuestion.type === 'multiple') {
+        // Display multiple-choice options
+        choices.forEach((choice, index) => {
+            choice.classList.remove('hidden');
+            const number = choice.dataset['number'];
+            choice.innerText = currentQuestion['choice' + number];
+        });
+    } else if (currentQuestion.type === 'boolean') {
+        // Display true/false options only
+        choices.forEach((choice, index) => {
+            if (index < 2) {
+                choice.classList.remove('hidden');
+                choice.innerText = currentQuestion['choice' + (index + 1)];
+            } else {
+                choice.classList.add('hidden');
+            }
+        });
+    }
 
-    availableQuesions.splice(questionIndex, 1);
+    availableQuestions.splice(questionIndex, 1);
     acceptingAnswers = true;
 };
 

@@ -3,12 +3,21 @@ jQuery(document).ready(function ($) {
 
   // Show initial items and manage "Load More" functionality
   $(function () {
-    $(".item").slice(0, 6).show(); // Show the first 6 items
+    const initialItems = 6; // Number of items to show initially
+    const loadMoreCount = 3; // Number of items to show on each "Load More"
+
+    // Initially hide all items and then show the first `initialItems`
+    $(".item").hide().slice(0, initialItems).show();
+
     $("#load").click(function (e) { // Click event for "Load More"
       e.preventDefault();
-      $(".item:hidden").slice(0, 3).show(); // Show the next 3 hidden items
-      if ($(".item:hidden").length == 0) { // Check if no hidden items are left
-        $("#load").hide(); // Hide the "Load More" button
+      const hiddenItems = $(".item:hidden"); // Select hidden items
+
+      if (hiddenItems.length > 0) {
+        hiddenItems.slice(0, loadMoreCount).slideDown(); // Show next set of items
+        if (hiddenItems.slice(loadMoreCount).length === 0) {
+          $("#load").fadeOut(); // Hide "Load More" if no items are left
+        }
       }
     });
   });
