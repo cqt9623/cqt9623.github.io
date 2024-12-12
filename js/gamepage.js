@@ -14,7 +14,9 @@ jQuery(document).ready(function ($) {
       const hiddenItems = $(".item:hidden"); // Select hidden items
 
       if (hiddenItems.length > 0) {
-        hiddenItems.slice(0, loadMoreCount).slideDown(); // Show next set of items
+        hiddenItems.slice(0, loadMoreCount).each(function () {
+          $(this).css('display', 'block').hide().slideDown(); // Ensure display:block
+        });
         if (hiddenItems.slice(loadMoreCount).length === 0) {
           $("#load").fadeOut(); // Hide "Load More" if no items are left
         }
@@ -36,9 +38,12 @@ jQuery(document).ready(function ($) {
     });
 
     // Animate scroll to the target section
-    $('body, html').animate({
-      "scrollTop": $('#' + scrollTo).offset().top
-    }, 1000);
+    const target = $('#' + scrollTo);
+    if (target.length) {
+      $('body, html').animate({
+        scrollTop: target.offset().top
+      }, 1000);
+    }
     return false;
   });
 
