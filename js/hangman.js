@@ -68,6 +68,10 @@ for (let i = 97; i <= 122; i++) {
     keyboardDiv.appendChild(button);
     button.addEventListener("click", (e) => initGame(e.target, String.fromCharCode(i)));
 }
-
+// Adding a button for "-"
+const dashButton = document.createElement("button");
+dashButton.innerText = "-";
+keyboardDiv.appendChild(dashButton);
+dashButton.addEventListener("click", (e) => initGame(e.target, "-"));
 getRandomWord();
 playAgainBtn.addEventListener("click", getRandomWord);
