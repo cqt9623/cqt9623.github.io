@@ -4,20 +4,20 @@ jQuery(document).ready(function ($) {
   // Show initial items and manage "Load More" functionality
   $(function () {
     const initialItems = 6; // Number of items to show initially
-    const loadMoreCount = 3; // Number of items to show on each "Load More"
+    const loadMoreCount = 3; // Number of items to show on each "Load More" click
 
     // Initially hide all items and then show the first `initialItems`
-    $(".item").hide().slice(0, initialItems).show();
+    $(".item").hide().slice(0, initialItems).css('display', 'block');
 
     $("#load").click(function (e) {
       e.preventDefault(); // Prevent default action for the button/link
       const hiddenItems = $(".item:hidden"); // Select all hidden items
 
       // Show the next `loadMoreCount` hidden items
-      hiddenItems.slice(0, loadMoreCount).slideDown().css('display', 'block');
+      hiddenItems.slice(0, loadMoreCount).css('display', 'block');
 
       // If no more hidden items, hide the "Load More" button
-      if (hiddenItems.length <= loadMoreCount) {
+      if (hiddenItems.slice(loadMoreCount).length === 0) {
         $("#load").fadeOut();
       }
     });
@@ -25,7 +25,7 @@ jQuery(document).ready(function ($) {
 
   // Smooth scrolling functionality for anchors with a class of scrollTo
   $('a.scrollTo').on('click', function () {
-    var scrollTo = $(this).attr('data-scrollTo'); // Get the target section ID
+    const scrollTo = $(this).attr('data-scrollTo'); // Get the target section ID
 
     // Toggle the active class
     $("a.scrollTo").each(function () {
