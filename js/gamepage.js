@@ -9,17 +9,16 @@ jQuery(document).ready(function ($) {
     // Initially hide all items and then show the first `initialItems`
     $(".item").hide().slice(0, initialItems).show();
 
-    $("#load").click(function (e) { // Click event for "Load More"
-      e.preventDefault();
-      const hiddenItems = $(".item:hidden"); // Select hidden items
+    $("#load").click(function (e) {
+      e.preventDefault(); // Prevent default action for the button/link
+      const hiddenItems = $(".item:hidden"); // Select all hidden items
 
-      if (hiddenItems.length > 0) {
-        hiddenItems.slice(0, loadMoreCount).each(function () {
-          $(this).css('display', 'block').hide().slideDown(); // Ensure display:block
-        });
-        if (hiddenItems.slice(loadMoreCount).length === 0) {
-          $("#load").fadeOut(); // Hide "Load More" if no items are left
-        }
+      // Show the next `loadMoreCount` hidden items
+      hiddenItems.slice(0, loadMoreCount).slideDown().css('display', 'block');
+
+      // If no more hidden items, hide the "Load More" button
+      if (hiddenItems.length <= loadMoreCount) {
+        $("#load").fadeOut();
       }
     });
   });
