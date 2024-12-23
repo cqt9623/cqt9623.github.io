@@ -624,11 +624,11 @@ footer a:hover {
   display: inline-block;
   text-align: center;
   line-height: 80px;
-  font-size: 15px;
+  font-size: 20px;
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 1px;
-  color: #fff;
+  color: #0cb4dd;
   background-color: #313131;
   transition: all 0.5s;
  }

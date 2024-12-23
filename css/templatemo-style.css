@@ -664,11 +664,11 @@ footer a:hover {
   display: inline-block;
   text-align: center;
   line-height: 80px;
-  font-size: 15px;
+  font-size: 20px;
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 1px;
-  color: #fff;
+  color: #0cb4dd;
   background-color: #313131;
   transition: all 0.5s;
  }
@@ -807,7 +807,7 @@ footer a:hover {
   margin-top: 0px;
   font-size: 36px;
   font-weight: 200;
-  color: #f4dd5b;
+  color: #4ad8f1;
   letter-spacing: 0.5px;
 }
 
@@ -847,9 +847,9 @@ footer a:hover {
   text-transform: uppercase;
   font-weight: 600;
   background-color: transparent;
-  color: #f4dd5b;
+  color: #0fb2cf;
   letter-spacing: 2px;
-  border-bottom: 3px solid #f4dd5b;
+  border-bottom: 3px solid #0fb2cf;
   padding-bottom: 3px;
   text-decoration: none;
   transition: all 0.5s;
@@ -861,7 +861,7 @@ footer a:hover {
 }
 
 .pricing-tables .premium-item {
-  background-color: #f4dd5b;
+  background-color: #5bd4ea;
   text-decoration: none;
 }
 
