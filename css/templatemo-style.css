@@ -73,29 +73,70 @@ body, html {
 }
 
 #filter-buttons .col-12 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #filter-buttons button {
-  border-radius: 3px;
-  background: #fff;
-  border: 1px solid transparent; /* Ensure border visibility for hover effects */
-  margin: 10px;
-  padding: 10px 20px; /* Adjust padding for better button size */
+  --hue: 200;
+  position: relative;
+  display: flex; /* Use flexbox */
+  justify-content: center; /* Center text horizontally */
+  align-items: center; /* Center text vertically */
+  padding: 1rem 3rem;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  color: white;
+  text-transform: uppercase;
+  background-color: hsl(var(--hue), 100%, 0%);
+  border: 1px solid hsl(var(--hue), 100%, 41%);
+  outline: transparent;
+  overflow: hidden;
   cursor: pointer;
-  transition: background-color 0.3s, box-shadow 0.3s;
-  
+  user-select: none;
+  white-space: nowrap;
+  transition: 0.25s;
+  margin: 10px;
+  border-radius: 0px; /* Rounded corners for buttons */
+  font-family: 'Kanit', sans-serif;
 }
 
 #filter-buttons button:hover {
-  background: #ddd;
+  background-color: hsl(var(--hue), 100%, 31%);
 }
 
 #filter-buttons button.active {
-  color: #fff;
-  background: #6c757d;
+  --hue: 187;
+  background-color: hsl(var(--hue), 100%, 21%);
+  border-color: hsl(var(--hue), 100%, 41%);
+  box-shadow: 0 0 0px 0px hsla(var(--hue), 100%, 41%, 0.5); /* Glow effect for active button */
+}
+
+#filter-buttons button.shine::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+      120deg,
+      transparent,
+      hsla(var(--hue), 100%, 41%, 0.5),
+      transparent
+  );
+  transform: translateX(-100%);
+  transition: 0.6s;
+}
+
+#filter-buttons button.shine:hover {
+  background-color: transparent;
+  box-shadow: 0 0 5px 5px hsla(var(--hue), 100%, 41%, 0.5);
+}
+
+#filter-buttons button.shine:hover::before {
+  transform: translateX(100%);
 }
 
 #filterable-cards .portfolio-item {
@@ -431,24 +472,23 @@ nav {
   text-decoration: none;
 }
 
+.portfolio-item .thumb {
+  position: relative;
+  max-width: 100%; /* Allows the container to adapt to screen size */
+  max-height: 100%; /* Ensures height adjusts proportionally */
+  overflow: hidden;
+  display: flex;
+  text-decoration: none;
+}
+
 .portfolio-item img {
-  height: 350px;
-  width: 350px;
-  object-fit: cover;
+  width: 100%; /* Makes the image responsive to its container width */
+  height: auto; /* Maintains aspect ratio */
+  object-fit: cover; /* Ensures the image covers the container without distortion */
   display: block;
   text-decoration: none;
 }
 
-
-
-
-.portfolio-item .hover-effect .hover-content {
-    position: absolute;
-    text-align: left;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-}
 
 
 .full-screen-portfolio .portfolio-item h1 {
