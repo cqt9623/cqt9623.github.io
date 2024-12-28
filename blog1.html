@@ -19,25 +19,6 @@
 
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 
-    <style>
-        /* Ensure the page layout supports a sticky footer */
-        body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            margin: 0;
-        }
-
-        main {
-            flex: 1; /* Pushes footer to the bottom */
-        }
-
-        footer {
-            background-color: #2d343b;
-            text-align: center;
-            
-        }
-    </style>
 </head>
 <body>
 
@@ -57,18 +38,11 @@
             </div>
         </div>
     </div>
-
-    <main>
-        <div style="display: grid; grid-auto-flow: column; align-items: center; gap: 10px;">
-            <iframe style="width:100%;max-width:360px;height:360px;"
-                src="https://stopwatch-app.com/widget/countdown?theme=dark&color=blue&title=Happy%20New%20Year!&date=2025-01-01T00%3A00" 
-                frameborder="0">
-            </iframe>
-            <script type="text/javascript" src="//www.100widgets.com/js_data.php?id=286"></script>
-            <script type="text/javascript" src="//www.100widgets.com/js_data.php?id=269"></script>
-            
-        </div>
-    </main>
+    <a class="weatherwidget-io" href="https://forecast7.com/en/21d03105d83/hanoi/" data-label_1="HÀ NỘI" data-label_2="Đống Đa" data-font="Arial Narrow" data-theme="hexellence" >HÀ NỘI Đống Đa</a>
+    <script>
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+    </script>
+    
     <section class="overlay-menu">
         <div class="container">
             <div class="row">
@@ -107,7 +81,7 @@
     <script src="js/vendor/bootstrap.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
-    <script src="https://website-widgets.pages.dev/dist/sienna.min.js" defer></script>
+    <script src="https://app.embed.im/accessibility.js" defer></script>
     <script src="https://www.w3counter.com/tracker.js?id=154728"></script>
 </body>
 </html>
