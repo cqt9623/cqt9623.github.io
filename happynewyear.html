@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Happy New Year</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.jpg">
+    <link rel="icon" type="image/jpg" href="/img/favicon2.jpg">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/fontAwesome.css">
+    <link rel="stylesheet" href="css/light-box.css">
+    <link rel="stylesheet" href="css/templatemo-style happy new year.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Kanit:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+
+    <div class="tet_left"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgb3PBtYvcb0AwzJvp5rDfHAOlC_0BsSevp3we6JTICzZAbrhaLcMtlnOAvCb_6A_LuZfnDSCYUVp5M6a_SSq1tQ825ioZ3H1mkboSV8OA7y-cqo723yZJVuniaCibs715peZlIoVfENoBVvigVfJJDffiAoij6tWFv4Jx3RWIVUcQDN5zeMWweAuCuCw/s16000/left-1.png" alt="AnonyViet-Tet"/></div> 
+    <div class="tet_right"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhmE7w44KuUqFCci75HHT6fo4Snv-s9j8NpP9ERbJhtT9WOasSnDeiDGruspoNUbHQBENce0laVEZZaQc0C-V5pZBPhNgX2ktJprmXpW96EgMHVBBDdbO2UugIYyNY-nXST_nKFcDwDXDiBqM7LZktNIrkgDqQEtdnvYxtt5ZCoV82VNKgSYUIxT1OzYg/s16000/right-1.png" alt="AnonyViet-Tet"/></div>
+    <div class="tet_bottom"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwruFlhClo3FUKNBQtDvqWYiDVOoi-IT7Jy4R11OU5HaOFR2N7CcX5sH4FWQI_GRoVrx4Hd5pVQREJ_QsAjvSA41v25TW0LEGW2jb8s3J2QwCrXp4qsMqdvxUZz9lglGyxL4YQxIbbf17zyqd99Rr28rDzx-foaXJRQ13kQUAblMtlt4U1rKMYbHkn5w/s16000/bottom-1.png" alt="AnonyViet-Tet"/></div>
+
+    <script type="text/javascript">
+        var no = 20;
+        if (matchMedia('only screen and (max-width: 767px)').matches) {
+            no = 10        }
+        let img_url = 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEizrrtX-KQtKY8e8pxCHjLROT5pYW7sVkUpET9HHpW8QO-PnoIRKVsvRDxM6shrE4Q-44Oh9teSGK1SApaZ1OJvhR4z7ENgKSJOLWfsdKw9jPszAa2HqaE6W8ohyGHRvff6TgKXEUjnn73LLLp3FHbtMTJnIkPxPhujWwG5ZsFgW7ctQ0zrR5KKSqlewg/s16000/hoadao-anonyviet.com.png';
+        var hidesnowtime = 0;
+        var color_snow  = '#fff';
+        var snowdistance = 'windowheight'; // windowheight or pageheight;
+        var ie4up = (document.all) ? 1 : 0;
+        var ns6up = (document.getElementById && !document.all) ? 1 : 0;
+
+        function iecompattest() {
+            return (document.compatMode && document.compatMode != 'BackCompat') ? document.documentElement : document.body
+        }
+
+        var dx, xp, yp;
+        var am, stx, sty;
+        var i, doc_width = 800, doc_height = 600;
+        if (ns6up) {
+            doc_width = self.innerWidth;
+            doc_height = self.innerHeight
+        } else if (ie4up) {
+            doc_width = iecompattest().clientWidth;
+            doc_height = iecompattest().clientHeight
+        }
+        dx = new Array();
+        xp = new Array();
+        yp = new Array();
+        am = new Array();
+        stx = new Array();
+        sty = new Array();
+        for (i = 0; i < no; ++i) {
+            dx[i] = 0;
+            xp[i] = Math.random() * (doc_width - 50);
+            yp[i] = Math.random() * doc_height;
+            am[i] = Math.random() * 20;
+            stx[i] = 0.02 + Math.random() / 10;
+            sty[i] = 0.7 + Math.random();
+            if (ie4up || ns6up) {
+                document.write('<div id="dot'+i+'" style="POSITION:fixed;Z-INDEX:'+(99+i)+';VISIBILITY:visible;TOP:15px;LEFT:15px;pointer-events: none;width:15px"><span style="font-size:18px;color:'+color_snow+'"><img src="'+img_url+'" alt=""></span></div>');
+            }
+        }
+
+        function snowIE_NS6() {
+            doc_width = ns6up ? window.innerWidth - 10 : iecompattest().clientWidth - 10;
+            doc_height = (window.innerHeight && snowdistance == 'windowheight') ? window.innerHeight : (ie4up && snowdistance == 'windowheight') ? iecompattest().clientHeight : (ie4up && !window.opera && snowdistance == 'pageheight') ? iecompattest().scrollHeight : iecompattest().offsetHeight;
+            for (i = 0; i < no; ++i) {
+                yp[i] += sty[i];
+                if (yp[i] > doc_height - 50) {
+                    xp[i] = Math.random() * (doc_width - am[i] - 30);
+                    yp[i] = 0;
+                    stx[i] = 0.02 + Math.random() / 10;
+                    sty[i] = 0.7 + Math.random()
+                }
+                dx[i] += stx[i];
+                document.getElementById('dot' + i).style.top = yp[i] + 'px';
+                document.getElementById('dot' + i).style.left = xp[i] + am[i] * Math.sin(dx[i]) + 'px'
+            }
+            snowtimer = setTimeout('snowIE_NS6()', 10)
+        }
+
+        function hidesnow() {
+            if (window.snowtimer) {
+                clearTimeout(snowtimer)
+            }
+            for (i = 0; i < no; i++) document.getElementById('dot' + i).style.visibility = 'hidden'
+        }
+
+        if (ie4up || ns6up) {
+            snowIE_NS6();
+            if (hidesnowtime > 0) setTimeout('hidesnow()', hidesnowtime * 1000)
+        }
+    </script>
+<style>
+    #fireworksCanvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        z-index: 999999;
+        mix-blend-mode: screen;
+    }
+    </style>
+    
+</head>
+<body>
+    <video autoplay loop>
+        <source src="/sound/newyear.mp4" type="video/mp4">
+      </video>
+    <audio src="/sound/explosion-42132.mp3" autoplay unmuted style="display: none;"></audio>
+    <audio src="/sound/huge-explosion-87823.mp3" autoplay unmuted style="display: none;"></audio>
+    <audio src="/sound/monster-footstep-162883.mp3" autoplay unmuted style="display: none;"></audio>
+    <audio src="/sound/whoosh-hit-163595.mp3" autoplay unmuted style="display: none;"></audio>
+    <audio id="delayedAudio" src="/sound/Bản ghi Mới 3.mp3" unmuted autoplay style="display: none;"></audio>
+    <script>
+        // Wait for 5 seconds and then play the audio
+        setTimeout(() => {
+            const audio = document.getElementById('delayedAudio');
+            audio.play().catch(error => {
+                console.error("Playback error:", error);
+            });
+        }, 5000);
+    </script>
+    <style type="text/css">
+        .tet_left img, .tet_right img {
+            width: 100%;
+            height: auto;
+        }
+        .tet_left, .tet_right {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 99;
+            width: 191px;
+            pointer-events: none;
+        }
+        .tet_right {
+            left: auto;
+            right: 0;
+            width: 191px;
+        }
+                .tet_bottom {
+            position: fixed;
+            bottom: 0;
+            left: 80px;
+            z-index: 99;
+            width: 320px;
+            pointer-events: none;
+        }
+                @media (max-width: 1331px){
+            .tet_left, .tet_right, .tet_bottom{
+                display: none !important;
+            }
+        }
+</style>
+<style>
+    .confetti{
+   max-width: 640px;
+   display: block;
+   margin: 0 auto;
+   border: 1px solid #ddd;
+   user-select: none;
+}
+</style>
+    <canvas class="confetti" id="canvas"></canvas>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+    <script src="https://www.w3counter.com/tracker.js?id=154728"></script>
+    <script src="https://app.embed.im/spark.js" defer></script>
+    <script src="https://app.embed.im/snow.js" defer></script>
+    <script src="https://app.embed.im/confetti.js" defer></script>
+    <script src="https://app.embed.im/balloons.js" defer></script>
+    <canvas id="fireworksCanvas"></canvas>
+<script src="https://anonyviet.com/resource/plugin-phao-hoa-theo-chuot/fireworks.js"></script>
+<script>
+    //-----------Var Inits--------------
+canvas = document.getElementById("canvas");
+ctx = canvas.getContext("2d");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+cx = ctx.canvas.width / 2;
+cy = ctx.canvas.height / 2;
+
+let confetti = [];
+const confettiCount = 300;
+const gravity = 0.5;
+const terminalVelocity = 5;
+const drag = 0.075;
+const colors = [
+{ front: 'red', back: 'darkred' },
+{ front: 'green', back: 'darkgreen' },
+{ front: 'blue', back: 'darkblue' },
+{ front: 'yellow', back: 'darkyellow' },
+{ front: 'orange', back: 'darkorange' },
+{ front: 'pink', back: 'darkpink' },
+{ front: 'purple', back: 'darkpurple' },
+{ front: 'turquoise', back: 'darkturquoise' }];
+
+
+//-----------Functions--------------
+resizeCanvas = () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  cx = ctx.canvas.width / 2;
+  cy = ctx.canvas.height / 2;
+};
+
+randomRange = (min, max) => Math.random() * (max - min) + min;
+
+initConfetti = () => {
+  for (let i = 0; i < confettiCount; i++) {
+    confetti.push({
+      color: colors[Math.floor(randomRange(0, colors.length))],
+      dimensions: {
+        x: randomRange(10, 20),
+        y: randomRange(10, 30) },
+
+      position: {
+        x: randomRange(0, canvas.width),
+        y: canvas.height - 1 },
+
+      rotation: randomRange(0, 2 * Math.PI),
+      scale: {
+        x: 1,
+        y: 1 },
+
+      velocity: {
+        x: randomRange(-25, 25),
+        y: randomRange(0, -50) } });
+
+
+  }
+};
+
+//---------Render-----------
+render = () => {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  confetti.forEach((confetto, index) => {
+    let width = confetto.dimensions.x * confetto.scale.x;
+    let height = confetto.dimensions.y * confetto.scale.y;
+
+    // Move canvas to position and rotate
+    ctx.translate(confetto.position.x, confetto.position.y);
+    ctx.rotate(confetto.rotation);
+
+    // Apply forces to velocity
+    confetto.velocity.x -= confetto.velocity.x * drag;
+    confetto.velocity.y = Math.min(confetto.velocity.y + gravity, terminalVelocity);
+    confetto.velocity.x += Math.random() > 0.5 ? Math.random() : -Math.random();
+
+    // Set position
+    confetto.position.x += confetto.velocity.x;
+    confetto.position.y += confetto.velocity.y;
+
+    // Delete confetti when out of frame
+    if (confetto.position.y >= canvas.height) confetti.splice(index, 1);
+
+    // Loop confetto x position
+    if (confetto.position.x > canvas.width) confetto.position.x = 0;
+    if (confetto.position.x < 0) confetto.position.x = canvas.width;
+
+    // Spin confetto by scaling y
+    confetto.scale.y = Math.cos(confetto.position.y * 0.1);
+    ctx.fillStyle = confetto.scale.y > 0 ? confetto.color.front : confetto.color.back;
+
+    // Draw confetti
+    ctx.fillRect(-width / 2, -height / 2, width, height);
+
+    // Reset transform matrix
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+  });
+
+  // Fire off another round of confetti
+  if (confetti.length <= 10) initConfetti();
+
+  window.requestAnimationFrame(render);
+};
+
+//---------Execution--------
+initConfetti();
+render();
+
+//----------Resize----------
+window.addEventListener('resize', function () {
+  resizeCanvas();
+});
+
+//------------Click------------
+window.addEventListener('click', function () {
+  initConfetti();
+});
+</script>
+</body>
+</html>
