@@ -463,33 +463,32 @@ nav {
   padding-right: 0px;
 }
 
-.portfolio-item .thumb {
-  position:relative;
-  max-height: 350;
-  max-width: 350;
-  overflow: hidden;
-  display: flex;
-  text-decoration: none;
+
+
+
+
+/* Add or update this block to force all portfolio images to have the same size */
+.portfolio-item .image {
+    width: 100%;
+    height: 350px;         /* Set your desired fixed height */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.portfolio-item .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;     /* Ensures image covers the area without distortion */
+    object-position: center;
+    display: block;
 }
 
 .portfolio-item .thumb {
-  position: relative;
-  max-width: 100%; /* Allows the container to adapt to screen size */
-  max-height: 100%; /* Ensures height adjusts proportionally */
-  overflow: hidden;
-  display: flex;
-  text-decoration: none;
+    position: relative;
+    overflow: hidden;
 }
-
-.portfolio-item img {
-  width: 100%; /* Makes the image responsive to its container width */
-  height: auto; /* Maintains aspect ratio */
-  object-fit: cover; /* Ensures the image covers the container without distortion */
-  display: block;
-  text-decoration: none;
-}
-
-
 
 .full-screen-portfolio .portfolio-item h1 {
   position: relative;
@@ -513,29 +512,36 @@ nav {
   transform: translateY(0);
  }
 
-.full-screen-portfolio .portfolio-item p {
-  padding-left: 20px;
-  font-weight: 300!important;
-  letter-spacing: 0.5px;
-  font-size: 14px;
-  color: #fff;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: .5s ease-in-out;
-  text-transform: uppercase;
- }
-
- .full-screen-portfolio .portfolio-item {
- text-align: center;
- line-height: 150%;
- text-transform: lowercase;
- cursor: pointer;
+.full-screen-portfolio .portfolio-item {
+  text-align: center;
+  line-height: 150%;
+  text-transform: lowercase;
+  cursor: pointer;
+  position: relative; /* Thêm dòng này */
 }
 
-.full-screen-portfolio .portfolio-item:hover p {
+.thumb .hover-content p {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: .5s ease-in-out, height .5s;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  display: inline-block;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.thumb:hover .hover-content p {
   opacity: 1;
+  max-height: 500px; /* Đủ lớn cho nội dung dài */
+  pointer-events: auto;
   transform: translateY(0);
- }
+  display: inline-block;
+  padding-left: 20px;
+  padding-right: 20px;
+}
 
 
 
@@ -613,7 +619,21 @@ footer a:hover {
     left: 0;
     text-decoration:none;
 }
-
+/* Add this at the end of your CSS file or inside a <style> tag in your HTML head */
+.dropdown-menu .btn.shine:hover,
+.dropdown-menu .btn.shine:focus {
+    background: #000 !important;
+    color: #fff !important;
+    border-color: #000 !important;
+}
+  .custom-hover-bg {
+      transition: background 0.3s;
+  }
+  .thumb:hover .custom-hover-bg {
+      background: rgba(128,128,128,0.85);
+      color: #fff;
+  }
+    
 
 .grid-portfolio .portfolio-item h1 {
   position: relative;
@@ -847,7 +867,7 @@ footer a:hover {
   text-transform: uppercase;
   font-weight: 600;
   background-color: transparent;
-  color: #0fb2cf;
+  color: #1c3b41;
   letter-spacing: 2px;
   border-bottom: 3px solid #0fb2cf;
   padding-bottom: 3px;

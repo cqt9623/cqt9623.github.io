@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>The Prince</title>
+    <title>SOMETHING</title>
     <!-- 
 
 Highway Template
@@ -31,7 +31,7 @@ https://templatemo.com/tm-520-highway
 
     <nav>
         <div class="logo">
-            <a href="index.html">The Prince</a>
+            <a href="index.html">SOMETHING</a>
         </div>
         <div class="menu-icon">
             <span></span>
@@ -42,10 +42,9 @@ https://templatemo.com/tm-520-highway
         <div class="video-overlay"></div>
         <div class="video-content">
             <div class="inner">
-                <h1>Welcome to <br><em>The Prince</em></h1>
-                <p>Empowering new graduate students with the knowledge and tools</p>
-                <p>In multinational financial institutions</p>
-                <p>To build a successful and fulfilling <br>"Career"</p>
+                <h1>SOMETHING</h1>
+                <p>Trang Web tổng hợp một số</p>
+                <p>Ảnh, Video</p>
                 <div class="scroll-icon">
                     <a class="scrollTo" data-scrollTo="portfolio" href="#"><img src="img/scroll-icon.png" alt=""></a>
                 </div>
@@ -57,303 +56,534 @@ https://templatemo.com/tm-520-highway
         <img src="img/Surface_Laptop_3_03.jpg" width="100%" height="100%" alt="picturess">
     </div>
 
-    
+
 
     <div class="grid-portfolio" id="portfolio">
         <div class="container">
+            <!-- ...existing code... -->
             <div class="container">
                 <div class="row mt-5" id="filter-buttons">
                     <div class="col-12 d-flex justify-content-center">
-                        <button class="btn shine active" data-filter="all">Show All</button>
-                        <button class="btn shine" data-filter="skills">Working Skills</button>
-                        <button class="btn shine" data-filter="stress">Workplace's Stress</button>
-                        <button class="btn shine" data-filter="working">WorkPlace Efficiency</button>
+                        <div class="dropdown mr-2">
+                            <button class="btn shine dropdown-toggle active" type="button" id="filterDropdown"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                All Pictures
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="filterDropdown" style="min-width: 180px;">
+                                
+                                <button class="dropdown-item btn shine w-100 mb-1" type="button"
+                                    data-filter="skills">Working Skills</button>
+                                <button class="dropdown-item btn shine w-100 mb-1" type="button"
+                                    data-filter="stress">Workplace's Stress</button>
+                                <button class="dropdown-item btn shine w-100" type="button"
+                                    data-filter="working">WorkPlace Efficiency</button>
+                            </div>
+                        </div>
+                        <div class="dropdown">
+                            <button class="btn shine dropdown-toggle" type="button" id="videoDropdown"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                All Videos
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="videoDropdown" style="min-width: 180px;">
+                                <button class="dropdown-item btn shine w-100 mb-1" type="button"
+                                    data-filter="mot">một</button>
+                                <button class="dropdown-item btn shine w-100 mb-1" type="button"
+                                    data-filter="hai">hai</button>
+                                <button class="dropdown-item btn shine w-100" type="button" data-filter="ba">ba</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>            
+            </div>
+            <!-- ...existing code... -->
+
+            <style>
+                /* CSS cho phần video */
+                #video-section {
+                    margin-top: 30px;
+                }
+                #video-section .video-item {
+                    display: none;
+                    transition: opacity 0.3s;
+                    opacity: 0;
+                }
+                #video-section .video-item.active {
+                    display: block !important;
+                    opacity: 1;
+                }
+                #video-section .thumb {
+                    background: #fdfdfd;
+                    border-radius: 5px;
+                    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+                    padding: 5px;
+                    margin-bottom: 30px;
+                }
+                #video-section .video-wrapper {
+                    position: relative;
+                    padding-top: 56.25%; /* 16:9 aspect ratio */
+                    height: 0;
+                    overflow: hidden;
+                    border-radius: 8px;
+                }
+                #video-section .video-wrapper video {
+                    position: absolute;
+                    top: 0; left: 0;
+                    width: 100%; height: 100%;
+                    border-radius: 8px;
+                    background: #000;
+                }
+            </style>
+
+            <div id="video-section">
+                <div class="row">
+                    <!-- Video nhóm một -->
+                    <div class="col-md-4 col-sm-6 video-item" data-group="mot">
+                        <div class="thumb">
+                            <div class="video-wrapper">
+                                <video controls width="100%">
+                                    <source src="img/12215493_1920_1080_30fps.mp4" type="video/mp4">
+                                    Trình duyệt của bạn không hỗ trợ video.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 video-item" data-group="mot">
+                        <div class="thumb">
+                            <div class="video-wrapper">
+                                <video controls width="100%">
+                                    <source src="img/video/6585486306592.mp4" type="video/mp4">
+                                    Trình duyệt của bạn không hỗ trợ video.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 video-item" data-group="mot">
+                        <div class="thumb">
+                            <div class="video-wrapper">
+                                <video controls width="100%">
+                                    <source src="img/video/6682538817772.mp4" type="video/mp4">
+                                    Trình duyệt của bạn không hỗ trợ video.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 video-item" data-group="mot">
+                        <div class="thumb">
+                            <div class="video-wrapper">
+                                <video controls width="100%">
+                                    <source src="img/video/6682538829189.mp4" type="video/mp4">
+                                    Trình duyệt của bạn không hỗ trợ video.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Video nhóm hai -->
+                    <div class="col-md-4 col-sm-6 video-item" data-group="hai">
+                        <div class="thumb">
+                            <div class="video-wrapper">
+                                <video controls width="100%">
+                                    <source src="img/video/6682538851635.mp4" type="video/mp4">
+                                    Trình duyệt của bạn không hỗ trợ video.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 video-item" data-group="hai">
+                        <div class="thumb">
+                            <div class="video-wrapper">
+                                <video controls width="100%">
+                                    <source src="img/video/6682538862731.mp4" type="video/mp4">
+                                    Trình duyệt của bạn không hỗ trợ video.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Video nhóm ba -->
+                    <div class="col-md-4 col-sm-6 video-item" data-group="ba">
+                        <div class="thumb">
+                            <div class="video-wrapper">
+                                <video controls width="100%">
+                                    <source src="img/video/photobooth - Made with Clipchamp (1).mp4" type="video/mp4">
+                                    Trình duyệt của bạn không hỗ trợ video.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 video-item" data-group="ba">
+                        <div class="thumb">
+                            <div class="video-wrapper">
+                                <video controls width="100%">
+                                    <source src="img/video/6682538863306.mp4" type="video/mp4">
+                                    Trình duyệt của bạn không hỗ trợ video.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 video-item" data-group="ba">
+                        <div class="thumb">
+                            <div class="video-wrapper">
+                                <video controls width="100%">
+                                    <source src="img/12215493_1920_1080_30fps.mp4" type="video/mp4">
+                                    Trình duyệt của bạn không hỗ trợ video.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                $(document).ready(function () {
+                    // Ẩn video section mặc định
+                    $('#video-section').hide();
+
+                    $('.dropdown-menu .dropdown-item').on('click', function (e) {
+                        e.preventDefault();
+                        var filter = $(this).data('filter');
+                        // Kiểm tra nút thuộc dropdown nào để đổi text đúng nút
+                        if ($(this).closest('.dropdown-menu').attr('aria-labelledby') === 'filterDropdown') {
+                            $('#filterDropdown').text($(this).text());
+                            $('#filterDropdown').addClass('active');
+                            $('#videoDropdown').removeClass('active');
+                        } else if ($(this).closest('.dropdown-menu').attr('aria-labelledby') === 'videoDropdown') {
+                            $('#videoDropdown').text($(this).text());
+                            $('#videoDropdown').addClass('active');
+                            $('#filterDropdown').removeClass('active');
+                        }
+
+                        // Nếu là Pictures
+                        if (filter === 'all' || filter === 'skills' || filter === 'stress' || filter === 'working') {
+                            $('#filterable-cards').show();
+                            $('.portfolio-item').hide();
+                            if (filter === 'all') {
+                                $('.portfolio-item').show();
+                            } else {
+                                $('.portfolio-item[data-name="' + filter + '"]').show();
+                            }
+                            $('#video-section').hide();
+                        }
+                        // Nếu là Videos
+                        else if (filter === 'mot' || filter === 'hai' || filter === 'ba' || filter === 'allvideos') {
+                            $('#filterable-cards').hide();
+                            $('#video-section').show();
+                            $('#video-section .video-item').removeClass('active');
+                            $('#video-section .video-item').hide();
+                            if (filter === 'allvideos') {
+                                $('#video-section .video-item').addClass('active').show();
+                            } else {
+                                $('#video-section .video-item[data-group="' + filter + '"]').addClass('active').show();
+                            }
+                        }
+                    });
+                });
+            </script>
+
             <div class="row" id="filterable-cards">
                 <div class="col-md-4 col-sm-6 portfolio-item" data-name="skills">
                     <div class="thumb">
-                        <a href="img/verbal.png" data-lightbox="image-1">
+                        <a data-lightbox="image-1">
                             <div class="hover-effect">
-                                <div class="hover-content">
+                                <div class="hover-content custom-hover-bg">
                                     <h1>Verbal <em>Communication</em></h1>
-                                    <p>How to use it effectively?</p>
+                                    <p>How to use it effectively? í a very difficult qquestion to answer</p>
                                 </div>
                             </div>
                         </a>
                         <div class="image">
-                            <a class="item"><img src="img/Designer (1).jpeg"></a>
+                            <a class="item"><img
+                                    src="img/index/z6642311463480_bd5b1398ac82a69544a17bb42fd7d01c.jpg"></a>
                         </div>
                     </div>
                 </div>
+
                 <div class="col-md-4 col-sm-6 portfolio-item" data-name="skills">
                     <div class="thumb">
-                        <a href="img/nonverbal.png" data-lightbox="image-1">
+                        <a data-lightbox="image-1">
                             <div class="hover-effect">
-                                <div class="hover-content">
+                                <div class="hover-content custom-hover-bg">
                                     <h1>Non-verbal <em>Communication</em></h1>
-                                    <p>How to use it effectively?</p>
+                                    <p>Learn what a Power BI semantic model is, which data loading approach to use, and
+                                        how to build out your semantic model to get the insights you need. This learning
+                                        path can help you prepare for the Microsoft Certified: Data Analyst Associate
+                                        certification.</p>
                                 </div>
                             </div>
                         </a>
                         <div class="image">
-                            <a class="item"><img src="img/Designer.jpeg"></a>
+                            <a class="item"><img
+                                    src="img/index/z6642311474613_4661c26b895d3e76d100a46629ccde84.jpg"></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 portfolio-item" data-name="skills">
                     <div class="thumb">
-                        <a href="img/listening.png" data-lightbox="image-1">
+                        <a data-lightbox="image-1">
                             <div class="hover-effect">
-                                <div class="hover-content">
+                                <div class="hover-content custom-hover-bg">
                                     <h1>Listening <em>Skill</em></h1>
                                     <p>How to use it effectively?</p>
                                 </div>
                             </div>
                         </a>
                         <div class="image">
-                            <a class="item"><img src="img/Designer (2).jpeg"></a>
+                            <a class="item"><img
+                                    src="img/index/z6642311505827_80154d6a21d57070628acd9307be6f1e.jpg"></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 portfolio-item" data-name="skills">
                     <div class="thumb">
-                        <a href="img/speaking.png" data-lightbox="image-1">
+                        <a data-lightbox="image-1">
                             <div class="hover-effect">
-                                <div class="hover-content">
+                                <div class="hover-content custom-hover-bg">
                                     <h1>Speaking <em>Skill</em></h1>
                                     <p>How to use it effectively?</p>
                                 </div>
                             </div>
                         </a>
                         <div class="image">
-                            <a class="item"><img src="img/Designer (3).jpeg"></a>
+                            <a class="item"><img
+                                    src="img/index/z6642311516735_41fae0791a5123cd9673e38291bc86df.jpg"></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 portfolio-item" data-name="skills">
                     <div class="thumb">
-                        <a href="img/writing.png" data-lightbox="image-1">
+                        <a data-lightbox="image-1">
                             <div class="hover-effect">
-                                <div class="hover-content">
+                                <div class="hover-content custom-hover-bg">
                                     <h1>Report Writing <em>Skill</em></h1>
                                     <p>How to use it effectively?</p>
                                 </div>
                             </div>
                         </a>
                         <div class="image">
-                            <a class="item"><img src="img/Designer (4).jpeg"></a>
+                            <a class="item"><img
+                                    src="img/index/z6642311528933_da9ea1edf7caec74443045ae9c40ebbb.jpg"></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 portfolio-item" data-name="skills">
                     <div class="thumb">
-                        <a href="img/language.png" data-lightbox="image-1">
+                        <a data-lightbox="image-1">
                             <div class="hover-effect">
-                                <div class="hover-content">
+                                <div class="hover-content custom-hover-bg">
                                     <h1>Foreign Language<em>Learning</em></h1>
                                     <p>How to use it effectively?</p>
                                 </div>
                             </div>
                         </a>
                         <div class="image">
-                            <a class="item"><img src="img/Designer (5).jpeg"></a>
+                            <a class="item"><img
+                                    src="img/index/z6642311561356_7fcdd3b80caa26ca7279e27103085841.jpg"></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 portfolio-item" data-name="skills">
                     <div class="thumb">
-                        <a href="img/dope.jpg" data-lightbox="image-1">
+                        <a data-lightbox="image-1">
                             <div class="hover-effect">
-                                <div class="hover-content">
+                                <div class="hover-content custom-hover-bg">
                                     <h1>Communication <em>Style</em></h1>
                                     <p>What style are you?</p>
                                 </div>
                             </div>
                         </a>
                         <div class="image">
-                            <a class="item"><img src="img/Designer (6).jpeg"></a>
+                            <a class="item"><img
+                                    src="img/index/z6642311571712_d091fb8b26ee94793026677402e86329.jpg"></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 portfolio-item" data-name="stress">
                     <div class="thumb">
-                        <a href="img/safety.png" data-lightbox="image-1">
+                        <a data-lightbox="image-1">
                             <div class="hover-effect">
-                                <div class="hover-content">
+                                <div class="hover-content custom-hover-bg">
                                     <h1>Safety <em>Procedures</em></h1>
                                     <p>What is it?</p>
                                 </div>
                             </div>
                         </a>
                         <div class="image">
-                            <a class="item"><img src="img/Designer (7).jpeg"></a>
+                            <a class="item"><img
+                                    src="img/index/z6642311634872_3cda2c33294ebc107be312856cb21315.jpg"></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 portfolio-item" data-name="stress">
                     <div class="thumb">
-                        <a href="img/bullying.png" data-lightbox="image-1">
+                        <a data-lightbox="image-1">
                             <div class="hover-effect">
-                                <div class="hover-content">
+                                <div class="hover-content custom-hover-bg">
                                     <h1>Workplace <em>Bully</em></h1>
                                     <p>How to advoid it?</p>
                                 </div>
                             </div>
                         </a>
                         <div class="image">
-                            <a class="item"><img src="img/Designer (8).jpeg"></a>
+                            <a class="item"><img
+                                    src="img/index/z6642311671892_4e2e1b26f6a4143970b15ac77a83a590.jpg"></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 portfolio-item" data-name="stress">
                     <div class="thumb">
-                        <a href="img/incidents.png" data-lightbox="image-1">
+                        <a data-lightbox="image-1">
                             <div class="hover-effect">
-                                <div class="hover-content">
+                                <div class="hover-content custom-hover-bg">
                                     <h1>Emergency <em>Incidents</em></h1>
                                     <p>How to response?</p>
                                 </div>
                             </div>
                         </a>
                         <div class="image">
-                            <a class="item"><img src="img/Designer (9).jpeg"></a>
+                            <a class="item"><img
+                                    src="img/index/z6642311722593_e534158499861d760247f772741f46e5.jpg"></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 portfolio-item" data-name="stress">
                     <div class="thumb">
-                        <a href="img/trustworkplace.png" data-lightbox="image-1">
+                        <a data-lightbox="image-1">
                             <div class="hover-effect">
-                                <div class="hover-content">
+                                <div class="hover-content custom-hover-bg">
                                     <h1>Express <em>Feelings</em></h1>
                                     <p>How to overcome stress?</p>
                                 </div>
                             </div>
                         </a>
                         <div class="image">
-                            <a class="item"><img src="img/Designer (10).jpeg"></a>
+                            <a class="item"><img
+                                    src="img/index/z6642311761059_6f3ffdbf8c2c4fafe5fc4105818221ff.jpg"></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 portfolio-item" data-name="stress">
                     <div class="thumb">
-                        <a href="img/participate.png" data-lightbox="image-1">
+                        <a data-lightbox="image-1">
                             <div class="hover-effect">
-                                <div class="hover-content">
+                                <div class="hover-content custom-hover-bg">
                                     <h1>Participate <em>Openly</em></h1>
                                     <p>How to overcome stress?</p>
                                 </div>
                             </div>
                         </a>
                         <div class="image">
-                            <a class="item"><img src="img/Designer (11).jpeg"></a>
+                            <a class="item"><img
+                                    src="img/index/z6642311845633_115e2874fb9695cad388273bb950f96f.jpg"></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 portfolio-item" data-name="working">
                     <div class="thumb">
-                        <a href="img/helppeople.png" data-lightbox="image-1">
+                        <a data-lightbox="image-1">
                             <div class="hover-effect">
-                                <div class="hover-content">
+                                <div class="hover-content custom-hover-bg">
                                     <h1>Help <em>People</em></h1>
                                     <p>How to achieve working efficiency?</p>
                                 </div>
                             </div>
                         </a>
                         <div class="image">
-                            <a class="item"><img src="img/Designer (12).jpeg"></a>
+                            <a class="item"><img
+                                    src="img/index/z6642311879936_7ae15863f687f91abbf2ed02a84eee7d.jpg"></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 portfolio-item" data-name="working">
                     <div class="thumb">
-                        <a href="img/make decision.png" data-lightbox="image-1">
+                        <a data-lightbox="image-1">
                             <div class="hover-effect">
-                                <div class="hover-content">
+                                <div class="hover-content custom-hover-bg">
                                     <h1>Make Decicion <em>Carefully</em></h1>
                                     <p>How to achieve working efficiency?</p>
                                 </div>
                             </div>
                         </a>
                         <div class="image">
-                            <a class="item"><img src="img/Designer (13).jpeg"></a>
+                            <a class="item"><img
+                                    src="img/index/z6642311907190_70c51a7d56325c92f398c32ef3ba56e3.jpg"></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 portfolio-item" data-name="stress">
                     <div class="thumb">
-                        <a href="img/communicate.png" data-lightbox="image-1">
+                        <a data-lightbox="image-1">
                             <div class="hover-effect">
-                                <div class="hover-content">
+                                <div class="hover-content custom-hover-bg">
                                     <h1>Learn to say <em>"NO"</em></h1>
                                     <p>How to build trust in Workplace?</p>
                                 </div>
                             </div>
                         </a>
                         <div class="image">
-                            <a class="item"><img src="img/Designer (14).jpeg"></a>
+                            <a class="item"><img
+                                    src="img/index/z6642311932613_a0ccf5a35dc3b1d5e03609b3cfb24a5b.jpg"></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 portfolio-item" data-name="working">
                     <div class="thumb">
-                        <a href="img/technology.png" data-lightbox="image-1">
+                        <a data-lightbox="image-1">
                             <div class="hover-effect">
-                                <div class="hover-content">
+                                <div class="hover-content custom-hover-bg">
                                     <h1>Technology in <em>Workplace</em></h1>
                                     <p>What is it?</p>
                                 </div>
                             </div>
                         </a>
                         <div class="image">
-                            <a class="item"><img src="img/Designer (15).jpeg"></a>
+                            <a class="item"><img
+                                    src="img/index/z6642311993536_af7e5336c383405c80610a6fd856f21b.jpg"></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 portfolio-item" data-name="working">
                     <div class="thumb">
-                        <a href="img/visual.png" data-lightbox="image-1">
+                        <a data-lightbox="image-1">
                             <div class="hover-effect">
-                                <div class="hover-content">
+                                <div class="hover-content custom-hover-bg">
                                     <h1>Data <em>Visualization</em></h1>
                                     <p>How to use it?</p>
                                 </div>
                             </div>
                         </a>
                         <div class="image">
-                            <a class="item"><img src="img/Designer (16).jpeg"></a>
+                            <a class="item"><img
+                                    src="img/index/z6642312027651_65b4f5710607749838aaec6205cf45cb.jpg"></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 portfolio-item" data-name="working">
                     <div class="thumb">
-                        <a href="img/designthinking.png" data-lightbox="image-1">
+                        <a data-lightbox="image-1">
                             <div class="hover-effect">
-                                <div class="hover-content">
+                                <div class="hover-content custom-hover-bg">
                                     <h1>Design <em>Thinking</em></h1>
                                     <p>How to learn it?</p>
                                 </div>
                             </div>
                         </a>
                         <div class="image">
-                            <a class="item"><img src="img/Designer (17).jpeg"></a>
+                            <a class="item"><img
+                                    src="img/index/z6642312050187_0ee9af73f8ae2297196761a8848f3b05.jpg"></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 portfolio-item" data-name="working">
                     <div class="thumb">
-                        <a href="img/toolbox.png" data-lightbox="image-1">
+                        <a data-lightbox="image-1">
                             <div class="hover-effect">
-                                <div class="hover-content">
+                                <div class="hover-content custom-hover-bg">
                                     <h1>Digital Workplace <em>Toolbox</em></h1>
                                     <p>What is it?</p>
                                 </div>
                             </div>
                         </a>
                         <div class="image">
-                            <a class="item"><img src="img/Designer (18).jpeg"></a>
+                            <a class="item"><img
+                                    src="img/index/z6642312086848_dd90e1f509aeaf66be16d27f0c121697.jpg"></a>
                         </div>
                     </div>
                 </div>
@@ -390,16 +620,16 @@ https://templatemo.com/tm-520-highway
                             <a href="index.html">Home</a>
                         </li>
                         <li>
-                            <a href="about.html">About Us</a>
+                            <a href="about.html">About</a>
                         </li>
                         <li>
-                            <a href="blog.html">Blog Entries</a>
+                            <a href="blog.html">Blog</a>
                         </li>
                         <li>
-                            <a href="game.html">Office Entertainment</a>
+                            <a href="game.html">Game</a>
                         </li>
                     </ul>
-                    <p>The Prince 😶‍🌫️😶‍🌫️😶‍🌫️</p>
+                    <p>SOMETHING 😶‍🌫️😶‍🌫️😶‍🌫️</p>
                 </div>
             </div>
         </div>
@@ -418,11 +648,62 @@ https://templatemo.com/tm-520-highway
         window.__lc.license = 18956781;
         window.__lc.integration_name = "manual_onboarding";
         window.__lc.product_name = "livechat";
-        ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[LiveChatWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="https://cdn.livechatinc.com/tracking.js",t.head.appendChild(n)}};!n.__lc.asyncInit&&e.init(),n.LiveChatWidget=n.LiveChatWidget||e}(window,document,[].slice))
+        ; (function (n, t, c) { function i(n) { return e._h ? e._h.apply(null, n) : e._q.push(n) } var e = { _q: [], _h: null, _v: "2.0", on: function () { i(["on", c.call(arguments)]) }, once: function () { i(["once", c.call(arguments)]) }, off: function () { i(["off", c.call(arguments)]) }, get: function () { if (!e._h) throw new Error("[LiveChatWidget] You can't use getters before load."); return i(["get", c.call(arguments)]) }, call: function () { i(["call", c.call(arguments)]) }, init: function () { var n = t.createElement("script"); n.async = !0, n.type = "text/javascript", n.src = "https://cdn.livechatinc.com/tracking.js", t.head.appendChild(n) } }; !n.__lc.asyncInit && e.init(), n.LiveChatWidget = n.LiveChatWidget || e }(window, document, [].slice))
     </script>
-    <noscript><a href="https://www.livechat.com/chat-with/18956781/" rel="nofollow">Chat with us</a>, powered by <a href="https://www.livechat.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a></noscript>
+    <noscript><a href="https://www.livechat.com/chat-with/18956781/" rel="nofollow">Chat with us</a>, powered by <a
+            href="https://www.livechat.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a></noscript>
     <!-- End of LiveChat code -->
 
 </body>
 
-</html>
+</html>    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://www.w3counter.com/tracker.js?id=154728"></script>
+    <script>
+        $(document).ready(function () {
+            // Ẩn video section mặc định
+            $('#video-section').hide();
+
+            $('.dropdown-menu .dropdown-item').on('click', function (e) {
+                e.preventDefault();
+                var filter = $(this).data('filter');
+                // Kiểm tra nút thuộc dropdown nào để đổi text đúng nút
+                if ($(this).closest('.dropdown-menu').attr('aria-labelledby') === 'filterDropdown') {
+                    $('#filterDropdown').text($(this).text());
+                    $('#filterDropdown').addClass('active');
+                    $('#videoDropdown').removeClass('active');
+                } else if ($(this).closest('.dropdown-menu').attr('aria-labelledby') === 'videoDropdown') {
+                    $('#videoDropdown').text($(this).text());
+                    $('#videoDropdown').addClass('active');
+                    $('#filterDropdown').removeClass('active');
+                }
+
+                // Nếu là Pictures
+                if (filter === 'all' || filter === 'skills' || filter === 'stress' || filter === 'working') {
+                    $('#filterable-cards').show();
+                    $('.portfolio-item').hide();
+                    if (filter === 'all') {
+                        $('.portfolio-item').show();
+                    } else {
+                        $('.portfolio-item[data-name="' + filter + '"]').show();
+                    }
+                    $('#video-section').hide();
+                }
+                // Nếu là Videos
+                else if (filter === 'mot' || filter === 'hai' || filter === 'ba') {
+                    $('#filterable-cards').hide();
+                    $('#video-section').show();
+                    $('#video-section .video-item').removeClass('active');
+                    $('#video-section .video-item').hide();
+                    $('#video-section .video-item[data-group="' + filter + '"]').addClass('active').show();
+                }
+            });
+        });
+    </script>
+    <script>
+        window.__lc = window.__lc || {};
+        window.__lc.license = 18956781;
+        window.__lc.integration_name = "manual_onboarding";
+        window.__lc.product_name = "livechat";
+        ; (function (n, t, c) { function i(n) { return e._h ? e._h.apply(null, n) : e._q.push(n) } var e = { _q: [], _h: null, _v: "2.0", on: function () { i(["on", c.call(arguments)]) }, once: function () { i(["once", c.call(arguments)]) }, off: function () { i(["off", c.call(arguments)]) }, get: function () { if (!e._h) throw new Error("[LiveChatWidget] You can't use getters before load."); return i(["get", c.call(arguments)]) }, call: function () { i(["call", c.call(arguments)]) }, init: function () { var n = t.createElement("script"); n.async = !0, n.type = "text/javascript", n.src = "https://cdn.livechatinc.com/tracking.js", t.head.appendChild(n) } }; !n.__lc.asyncInit && e.init(), n.LiveChatWidget = n.LiveChatWidget || e }(window, document, [].slice))
+    </script>
