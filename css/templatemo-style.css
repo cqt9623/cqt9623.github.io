@@ -635,29 +635,41 @@ footer a:hover {
   }
     
 
-.grid-portfolio .portfolio-item h1 {
+.grid-portfolio .portfolio-item {
   position: relative;
+}
+
+.grid-portfolio .portfolio-item h1 {
+  position: absolute;
+  left: 0;
+  bottom: 30px; /* Đẩy h1 lên để p nằm dưới */
   font-size: 22px;
   text-transform: uppercase;
   color: #fff;
   display: inline-block;
   padding-left: 20px;
-  line-height: 15px;
+  padding-bottom: 0;
+  line-height: 1.2;
   transform: translateY(25px);
   transition: .5s ease-in-out;
   letter-spacing: 0.5px;
- }
+  margin: 0;
+}
 
- .grid-portfolio .portfolio-item em {
+.grid-portfolio .portfolio-item em {
   font-style: normal;
   font-weight: 200;
- }
+}
 
 .grid-portfolio .portfolio-item:hover h1 {
+  opacity: 1;
   transform: translateY(0);
- }
+}
 
 .grid-portfolio .portfolio-item p {
+  position: absolute;
+  left: 0;
+  bottom: 0;
   padding-left: 20px;
   font-weight: 300!important;
   letter-spacing: 0.5px;
@@ -667,18 +679,20 @@ footer a:hover {
   transform: translateY(10px);
   transition: .5s ease-in-out;
   text-transform: uppercase;
- }
+  margin: 0;
+  line-height: 1.2;
+}
 
 .grid-portfolio .portfolio-item:hover p {
   opacity: 1;
   transform: translateY(0);
- }
+}
 
- .grid-portfolio .load-more-button {
+.grid-portfolio .load-more-button {
   margin-top: 15px;
- }
+}
 
- .grid-portfolio .load-more-button a {
+.grid-portfolio .load-more-button a {
   width: 100%;
   height: 80px;
   display: inline-block;
@@ -691,11 +705,11 @@ footer a:hover {
   color: #0cb4dd;
   background-color: #313131;
   transition: all 0.5s;
- }
+}
 
- .grid-portfolio .load-more-button a:hover {
+.grid-portfolio .load-more-button a:hover {
   color: rgba(250,250,250,0.5);
- }
+}
 
 
 
