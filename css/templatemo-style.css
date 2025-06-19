@@ -734,8 +734,8 @@ footer a:hover {
   height: 10%;
 }
  .services .service-item .icon {
-  width: 80px;
-  height: 80px;
+  width: 110px;
+  height: 110px;
   text-align: center;
   display: inline-block;
   line-height: 50px;
@@ -746,7 +746,7 @@ footer a:hover {
 }
 
 .services .service-item h4 {
-  margin-top: 20px;
+  margin-top: 30px;
   color: #fff;
   font-size: 20px;
   text-transform: capitalize;
@@ -764,7 +764,7 @@ footer a:hover {
 
 
 .more-about-us {
-  background-image: url(../img/WW_win95_v004_dark_post.png);
+  background-image: url(../img/index/z6642335386686_b607fe6d0d1f4fc718394e440536cd61.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
